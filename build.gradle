@@ -26,7 +26,24 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.cloud:spring-cloud-stream'
+
+    // JDBC 및 Mybatis
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+    // PG 설정
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+    runtimeOnly 'org.postgresql:postgresql'
+
+
+    // kafka 설정
     implementation 'org.springframework.kafka:spring-kafka'
+    
+    
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
@@ -34,6 +51,22 @@ dependencies {
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    
+    // Kinesis 설정 KCL
+    implementation 'software.amazon.awssdk:kinesis:2.29.52'
+    implementation 'software.amazon.kinesis:amazon-kinesis-client:2.4.8'
+    implementation 'software.amazon.awssdk:auth:2.29.52'
+    implementation 'software.amazon.awssdk:regions:2.29.52'
+
+    // Kinesis Cloud Bind
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kinesis:4.0.4'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.5" // 버전은 최신으로 조정 가능
+    }
 }
 
 tasks.named('test') {

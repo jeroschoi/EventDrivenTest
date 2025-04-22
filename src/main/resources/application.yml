@@ -15,6 +15,10 @@ spring:
         idle-timeout: 600000
         minimum-idle: 5
 
+  cloud:
+    function:
+      definition: kinesisListener;kinesisOutput
+
 #  datasource:
 #    url: jdbc:oracle:thin:@165.244.245.59:1521:DGSCS1
 #    username: GSHQEAI

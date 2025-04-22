@@ -13,23 +13,23 @@ import software.amazon.awssdk.services.kinesis.KinesisClient;
 @Slf4j
 @RequiredArgsConstructor
 public class KinesisConfig {
-//    private final AwsCredentialsProvider awsCredentialsProvider;
-//
-//    @Bean
-//    public KinesisClient kinesisClient() {
-//        log.info("KinesisClient bean Created");
-//        return KinesisClient.builder()
-//                .region(Region.of("ap-northeast-2"))
-//                .credentialsProvider(awsCredentialsProvider)
-//                .build();
-//    }
-//
-//    @Bean
-//    public KinesisAsyncClient kinesisAsyncClient() {
-//        log.info("kinesisAsyncClient bean Created");
-//        return KinesisAsyncClient.builder()
-//                .region(Region.AP_NORTHEAST_2) // 원하는 리전
-//                .credentialsProvider(awsCredentialsProvider) // 로컬 개발용
-//                .build();
-//    }
+    private final AwsCredentialsProvider awsCredentialsProvider;
+
+    @Bean
+    public KinesisClient kinesisClient() {
+        log.info("KinesisClient bean Created");
+        return KinesisClient.builder()
+                .region(Region.of("ap-northeast-2"))
+                .credentialsProvider(awsCredentialsProvider)
+                .build();
+    }
+
+    @Bean
+    public KinesisAsyncClient kinesisAsyncClient() {
+        log.info("kinesisAsyncClient bean Created");
+        return KinesisAsyncClient.builder()
+                .region(Region.AP_NORTHEAST_2) // 원하는 리전
+                .credentialsProvider(awsCredentialsProvider) // 로컬 개발용
+                .build();
+    }
 }
