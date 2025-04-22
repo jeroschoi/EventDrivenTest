@@ -6,21 +6,15 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @ToString
 @Builder
 public class TpSsUserStngShctBtnDTO {
-    private String cvsSiteCd;
-    private String posNo;
-    private String userStngSpCd;
-    private int btnSeqNo;
-    private String btnNm;
-    private String shctDistnVal;
-    private String otherRefVal;
     private String regUserId;
-    private Timestamp regDttm;
+    private LocalDateTime regDttm;
     private String lastModUserId;
-    private Timestamp lastModDttm;
+    private LocalDateTime lastModDttm;
 }

@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class KafkaConsumerService {
 
-    @KafkaListener(topics = "nextPos-poc", groupId = "esgTest")
-    public void consume(String message) {
-        System.out.println("Consumed message: " + message);
-    }
+//    @KafkaListener(topics = "nextPos-poc", groupId = "esgTest")
+//    public void consume(String message) {
+//        System.out.println("Consumed message: " + message);
+//    }
 }

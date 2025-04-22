@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: EventDrivenTest
+
+  datasource:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      url: jdbc:log4jdbc:postgresql://dgspos.gs25edgedev.com:5432/dgspos?encrypt=true&trustServerCertificate=true
+      username: gsposapp
+      password: gs!2024_App
+      hikari:
+        leakDetectionThreshold: 0
+        maximum-pool-size: 30
+        connection-timeout: 300000
+        max-lifetime: 1800000
+        idle-timeout: 600000
+        minimum-idle: 5
+
+#  datasource:
+#    url: jdbc:oracle:thin:@165.244.245.59:1521:DGSCS1
+#    username: GSHQEAI
+#    password: hqeai123
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      connection-timeout: 30000
+#      maximum-pool-size: 10
+#      minimum-idle: 5
+#      idle-timeout: 600000
+#      pool-name: HikariCP
+#      initialization-fail-timeout: 0
+
+## Kinesis Stream config
+
+
+#kafka:
+#  consumer:
+#    bootstrap:
+#      servers: localhost:9092
+#  producer:
+#    bootstrap:
+#      servers: localhost:9092
+
+
+
+
+
